@@ -3,6 +3,7 @@ import itertools
 import string
 import time
 import urllib.request
+from os.path import exists
 
 from bs4 import BeautifulSoup
 
@@ -74,7 +75,7 @@ def download_letter_entries(letter, file, remove_dead):
     file = file.format(letter)
     entries = itertools.chain.from_iterable(list(extract_letter_entries(letter)))
 
-    if remove_dead:
+    if remove_dead or not exists(file):
         all_data = entries
     else:
         with open(file, "r", encoding="utf-8") as f:

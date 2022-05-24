@@ -43,10 +43,8 @@ $ python main.py a b c --out "{0}.data"
 ```
 
 ```sh
-# remove old data
-$ rm -r data/*
-# re-download all entries
-$ python main.py
+# download and update all entries
+$ python main.py --remove-dead
 ```
 
 ## Usage

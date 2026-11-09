@@ -119,7 +119,7 @@ args = parser.parse_args()
 
 letters = [letter.upper() for letter in args.letters]
 if not letters:
-    with open(args.ifile, "r") as ifile:
+    with open(args.ifile, "r", encoding="utf-8") as ifile:
         for row in ifile:
             letters.append(row.strip())
 
